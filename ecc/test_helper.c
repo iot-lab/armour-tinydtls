@@ -45,7 +45,7 @@ void ecc_printNumber(const uint32_t *x, int numberLength){ //here the values are
 	int n;
 
 	for(n = numberLength - 1; n >= 0; n--){
-		printf("%08x", x[n]);
+		printf("%08" PRIx32, x[n]);
 	}
 	printf("\n");
 }
