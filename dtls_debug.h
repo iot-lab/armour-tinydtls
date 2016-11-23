@@ -28,7 +28,12 @@
 # ifndef DEBUG
 #  define DEBUG DEBUG_PRINT
 # endif /* DEBUG */
+
+#ifdef CONTIKI_2_7
+#include "net/uip-debug.h"
+#else /* CONTIKI_2_7 */
 #include "net/ip/uip-debug.h"
+#endif /* CONTIKI_2_7 */
 
 #ifdef CONTIKI_TARGET_MBXXX
 extern char __Stack_Init, _estack;

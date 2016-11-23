@@ -23,7 +23,13 @@
 #include "global.h"
 
 #ifdef WITH_CONTIKI
+
+#ifdef CONTIKI_2_7
+#include "net/uip.h"
+#else /* CONTIKI_2_7 */
 #include "ip/uip.h"
+#endif /* CONTIKI_2_7 */
+
 typedef struct {
   unsigned char size;
   uip_ipaddr_t addr;
