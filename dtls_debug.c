@@ -304,7 +304,7 @@ dtls_dsrv_hexdump_log(log_t level, const char *name, const unsigned char *buf, s
     fprintf(log_fd, "%s ", loglevels[level]);
 
   if (extend) {
-    fprintf(log_fd, "%s: (%zu bytes):\n", name, length);
+    fprintf(log_fd, "%s: (%lu bytes):\n", name, (unsigned long)length);
 
     while (length--) {
       if (n % 16 == 0)
@@ -321,7 +321,7 @@ dtls_dsrv_hexdump_log(log_t level, const char *name, const unsigned char *buf, s
       }
     }
   } else {
-    fprintf(log_fd, "%s: (%zu bytes): ", name, length);
+    fprintf(log_fd, "%s: (%lu bytes): ", name, (unsigned long)length);
     while (length--) 
       fprintf(log_fd, "%02X", *buf++);
   }
@@ -345,7 +345,7 @@ dtls_dsrv_hexdump_log(log_t level, const char *name, const unsigned char *buf, s
     PRINTF("%s ", loglevels[level]);
 
   if (extend) {
-    PRINTF("%s: (%zu bytes):\n", name, length);
+    PRINTF("%s: (%lu bytes):\n", name, (unsigned long)length);
 
     while (length--) {
       if (n % 16 == 0)
@@ -362,7 +362,7 @@ dtls_dsrv_hexdump_log(log_t level, const char *name, const unsigned char *buf, s
       }
     }
   } else {
-    PRINTF("%s: (%zu bytes): ", name, length);
+    PRINTF("%s: (%lu bytes): ", name, (unsigned long)length);
     while (length--) 
       PRINTF("%02X", *buf++);
   }
