@@ -76,7 +76,11 @@ void dtls_set_log_level(log_t level);
 #ifdef HAVE_VPRINTF
 void dsrv_log(log_t level, char *format, ...);
 #else
+#ifdef NDEBUG
+#define dsrv_log(level, format, ...)
+#else
 #define dsrv_log(level, format, ...) PRINTF(format, ##__VA_ARGS__)
+#endif
 #endif
 
 #ifndef NDEBUG
